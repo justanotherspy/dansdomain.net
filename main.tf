@@ -37,7 +37,10 @@ resource "aws_s3_bucket" "bucket" {
 
 resource "aws_s3_bucket" "logs_bucket" {
   bucket = "dansdomain-logs"
-  tags   = {}
+  tags   = {
+    "Description" = "The S3 Bucket for the logs"
+    "Name" = "dansdomain-logs"
+  }
 
   grant {
     permissions = ["READ", "READ_ACP", "WRITE"]
