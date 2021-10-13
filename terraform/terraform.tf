@@ -16,5 +16,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "eu-west-1"
+  region = "${var.region}"
+}
+
+variable "region" {
+  type = string
+  description = "Region"
+  default = "eu-west-1"
 }
